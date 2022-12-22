@@ -3,6 +3,10 @@
   padding:0;
 }
 
+html {
+  background-color: grey;
+}
+
 .header {
   text-align:center;
 }
@@ -11,4 +15,15 @@
 }
 .footer {
   text-align:center;
+}
+
+
+.room {
+  background-color: white;
+  height: 500px;
+  width: 800px;
+}
+.chat-box {
+  background-color: rgb(202, 191, 191);
+  height: 150px;
 }
