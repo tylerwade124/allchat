@@ -1,0 +1,3 @@
+CREATE DATABASE allchat;
+CREATE USER allchatuser WITH PASSWORD 'allchat';
+GRANT ALL PRIVILEGES ON DATABASE allchat TO allchatuser;
