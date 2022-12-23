@@ -9,7 +9,7 @@ Each room will have a virtual environment for the users to live-chat about a top
 ![Screen Shot 2022-12-23 at 8 41 46 AM](https://user-images.githubusercontent.com/114370648/209345576-e02bba23-a53a-4e06-866e-f26d2cd65529.png)
 
 ## technology used 
-#### Front End
+### Front End
 React
-#### Bacl End
+### Back End
 Django
