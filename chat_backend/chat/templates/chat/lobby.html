@@ -28,8 +28,9 @@
             if(data.type === 'chat'){
                 let messages = document.getElementById('messages')
 
+
                 messages.insertAdjacentHTML('beforeend', `<div>
-                                        <p>${data.message}</p>
+                                        <p>${data.username}: ${data.message}</p>
                                     </div>`)
             }
         }
