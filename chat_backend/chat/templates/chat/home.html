@@ -9,8 +9,17 @@
 </head>
 <body>
     <h1>AllChat</h1>
+
     {% if request.user.is_authenticated %}
         <p>Welcome {{request.user}}</p>
+        <a href="{% url 'logout' %}" class="btn btn-dark btn-block btn-sm m-1">Logout</a>
+        <a href="{% url 'lobby' %}" class="btn btn-dark btn-block btn-sm m-1">Chat</a>
+        <a href="{% url 'change_password'%}" class="btn btn-dark btn-block btn-sm m-1">Update Account</a>
+        
+    {% else %}
+        <a href="{% url 'login' %}" class="btn btn-dark btn-block btn-sm m-1">Login</a>
+        <a href="{% url 'register' %}" class="btn btn-dark btn-block btn-sm m-1">Register</a>
     {% endif %}
+
 </body>
 </html>

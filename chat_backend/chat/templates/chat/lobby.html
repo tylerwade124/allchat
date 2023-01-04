@@ -10,7 +10,10 @@
 </head>
 <body>
     <h1>AllChat</h1>
-
+    {% if request.user.is_authenticated %}
+    <p>Welcome {{request.user}}</p>
+    {% endif %}
+    <a href="{% url 'home' %}" class="btn btn-dark btn-block btn-sm m-1">Home</a>
     <form id="form">
         <input type="text" name="message"/>
     </form>
@@ -47,6 +50,8 @@
         })
 
     </script>
-    <a href="{% url 'logout' %}" class="btn btn-dark btn-block btn-sm m-1">Logout</a>
+            <form method="DELETE">
+                <button type="submit" value="{{data.message.id}}">Delete Messages</button>
+            </form>
 </body>
 </html>
