@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Lobby</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+</head>
+<body>
+    <h1>AllChat</h1>
+    {% if request.user.is_authenticated %}
+        <p>Welcome {{request.user}}</p>
+    {% endif %}
+</body>
+</html>
