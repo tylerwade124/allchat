@@ -19,7 +19,7 @@ def loginUser(request):
 
         if user is not None: 
             login(request, user)
-            return redirect('lobby')
+            return redirect('home')
 
     return render(request, 'chat/login_register.html', {'page': page})
 
@@ -40,7 +40,7 @@ def registerUser(request):
             user = authenticate(request, username=user.username, password=request.POST['password1'])
             if user is not None:
                 login(request, user)
-                return redirect('lobby')
+                return redirect('home')
 
     context= {'form': form, 'page': page}
     return render(request, 'chat/login_register.html', context)
