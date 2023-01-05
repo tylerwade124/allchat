@@ -55,7 +55,7 @@
 
     <section class="chat-box">
         <form id="form">
-            <input type="text" name="message" placeholder="Enter Message Here..."/>
+            <input type="text" name="message" placeholder="Enter Text Here..."/>
         </form>
         <section id="messages"></section>
     </section>
@@ -123,7 +123,7 @@
                 messages.insertAdjacentHTML('beforeend', `<section class="messages-in-box">
                                         <p><form method="delete">
                                             &nbsp;
-                <button formmethod="delete"type="submit" value="${messages}">X</button>&nbsp;<p class="user-in-message">${data.username}</p>: ${data.message}</p>
+                <button formmethod="delete"type="submit" value="${data.message}">X</button>&nbsp;<p class="user-in-message">${data.username}</p>: ${data.message}</p>
                                     
                                     </section>
                                     
