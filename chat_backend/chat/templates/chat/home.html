@@ -3,23 +3,57 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Lobby</title>
+    <title>Home</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'home.css'%}">
 
 </head>
 <body>
-    <h1>AllChat</h1>
-
+    <ul>
+        <li>
+          <input type="checkbox" />
+          <div classname="animation-text">A</div>
+        </li>
+        <li>
+          <input type="checkbox" />
+          <div classname="animation-text">L</div>
+        </li>
+        <li>
+          <input type="checkbox" />
+          <div classname="animation-text">L</div>
+        </li>
+        <li>
+          <input type="checkbox" />
+          <div classname="animation-text">C</div>
+        </li>
+        <li>
+          <input type="checkbox" />
+          <div classname="animation-text">H</div>
+        </li>
+        <li>
+          <input type="checkbox" />
+          <div classname="animation-text">A</div>
+        </li>
+        <li>
+          <input type="checkbox" />
+          <div classname="animation-text">T</div>
+        </li>
+      </ul>
+      <a href="{% url 'lobby' %}" class="start-chat">Start Chatting</a>
+      <section class="nav">
     {% if request.user.is_authenticated %}
-        <p>Welcome {{request.user}}</p>
-        <a href="{% url 'logout' %}" class="btn btn-dark btn-block btn-sm m-1">Logout</a>
-        <a href="{% url 'lobby' %}" class="btn btn-dark btn-block btn-sm m-1">Chat</a>
-        <a href="{% url 'change_password'%}" class="btn btn-dark btn-block btn-sm m-1">Update Account</a>
+        <p class="welcome">Welcome, {{request.user}}</p>
+        <a href="{% url 'logout' %}" class="logout">Logout</a>
+        <br/>
+        <a href="{% url 'change_password'%}" class="update-account">Update Account</a>
         
     {% else %}
-        <a href="{% url 'login' %}" class="btn btn-dark btn-block btn-sm m-1">Login</a>
-        <a href="{% url 'register' %}" class="btn btn-dark btn-block btn-sm m-1">Register</a>
+        <a href="{% url 'login' %}" class="login">Login</a>
+        <br/>
+        <a href="{% url 'register' %}" class="register">Register</a>
     {% endif %}
+      </section>
 
 </body>
 </html>

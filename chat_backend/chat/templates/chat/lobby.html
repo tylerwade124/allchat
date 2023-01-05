@@ -6,19 +6,60 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Lobby</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'lobby.css'%}">
 
 </head>
 <body>
-    <h1>AllChat</h1>
-    {% if request.user.is_authenticated %}
-    <p>Welcome {{request.user}}</p>
-    {% endif %}
-    <a href="{% url 'home' %}" class="btn btn-dark btn-block btn-sm m-1">Home</a>
-    <form id="form">
-        <input type="text" name="message"/>
-    </form>
+    <section class="welcome">
 
-    <div id="messages"></div>
+        {% if request.user.is_authenticated %}
+        <p>Welcome, {{request.user}}</p>
+        {% endif %}
+        <a href="{% url 'home' %}" class="btn btn-dark btn-block btn-sm m-1">Home</a>
+    </section>
+    
+        <ul>
+            <li>
+            <input type="checkbox" />
+            <div classname="animation-text">A</div>
+            </li>
+            <li>
+            <input type="checkbox" />
+            <div classname="animation-text">L</div>
+            </li>
+            <li>
+            <input type="checkbox" />
+            <div classname="animation-text">L</div>
+            </li>
+            <li>
+            <input type="checkbox" />
+            <div classname="animation-text">C</div>
+            </li>
+            <li>
+            <input type="checkbox" />
+            <div classname="animation-text">H</div>
+            </li>
+            <li>
+            <input type="checkbox" />
+            <div classname="animation-text">A</div>
+            </li>
+            <li>
+            <input type="checkbox" />
+            <div classname="animation-text">T</div>
+            </li>
+        </ul>
+
+
+ 
+
+    <section class="chat-box">
+        <form id="form">
+            <input type="text" name="message" placeholder="Enter Message Here..."/>
+        </form>
+        <section id="messages"></section>
+    </section>
+
 
     <script type="text/javascript">
         let url = `ws://${window.location.host}/ws/socket-server/`
@@ -31,11 +72,17 @@
 
             if(data.type === 'chat'){
                 let messages = document.getElementById('messages')
+                console.log(messages)
 
 
-                messages.insertAdjacentHTML('beforeend', `<div>
-                                        <p>${data.username}: ${data.message}</p>
-                                    </div>`)
+                messages.insertAdjacentHTML('beforeend', `<section class="messages-in-box">
+                                        <p><form method="delete">
+                                            &nbsp;
+                <button formmethod="delete"type="submit" value="${messages}">X</button>&nbsp;<p class="user-in-message">${data.username}</p>: ${data.message}</p>
+                                    
+                                    </section>
+                                    
+            </form>`)
             }
         }
 
@@ -50,8 +97,5 @@
         })
 
     </script>
-            <form method="DELETE">
-                <button type="submit" value="{{data.message.id}}">Delete Messages</button>
-            </form>
 </body>
 </html>
