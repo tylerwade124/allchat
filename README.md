@@ -11,6 +11,7 @@ A real time chat application that connects users from anywhere, and allows a use
 ## Planning
  - create a full stack web application where users can join a chat room and start real time chatting with other users
  - implement Django Channels
+ 
 [WireFrame](https://wireframe.cc/rdpBXw)
 
 [![Screen-Shot-2023-01-06-at-8-27-11-AM.png](https://i.postimg.cc/9QPynVr7/Screen-Shot-2023-01-06-at-8-27-11-AM.png)](https://postimg.cc/FYRfYMbr)
