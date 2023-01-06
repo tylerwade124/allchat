@@ -21,9 +21,11 @@ A real time chat application that connects users from anywhere, and allows a use
 
 ## Technology Used
  - Python
+ - JavaScript
  - Django
  - Django Channels
  - WebSockets
  - Django Auth
  - psycopg2-binary
  - Django CORS headers
+ - postgres
