@@ -121,13 +121,17 @@
 
 
                 messages.insertAdjacentHTML('beforeend', `<section class="messages-in-box">
-                                        <p><form method="delete">
-                                            &nbsp;
-                <button formmethod="delete"type="submit" value="${data.message}">X</button>&nbsp;<p class="user-in-message">${data.username}</p>: ${data.message}</p>
+                                                            <p>
+                                                            <form method="delete">
+                                                                &nbsp;
+                                                            <button formmethod="delete"type="submit" value="${data.message}">X</button>
+                                                            &nbsp;
+                                                            <p class="user-in-message">${data.username}</p>: ${data.message}
+                                                            </p>
+                                                        </form>
+                                                        </section>
                                     
-                                    </section>
-                                    
-            </form>`)
+                `)
             }
         }
 
